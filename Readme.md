@@ -35,6 +35,11 @@ for that we have to first place @inject annotation in any of the following ways.
 
 		class B{
 		@Inject  private A a;
+		
+		public B(A a)
+		{
+			this.a=a;
+		}
 
 		}
 
