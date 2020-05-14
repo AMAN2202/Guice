@@ -1,3 +1,7 @@
+What is DI?
+![image](https://cdn-media-1.freecodecamp.org/images/1*TF-VdAgPfcD497kAW77Ukg.png)
+
+
 For using dependency injection we need to configure module . Our module must be extending AbstractModule
 
 
