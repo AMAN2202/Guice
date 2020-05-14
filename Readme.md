@@ -181,19 +181,19 @@ We can use provide in Module class and simply inject as we were doing earlier.
 We can create a seperate class for proving dependecy using Provider. But it needs to implement interface
 
 
-interface Provider<T>{
-	T get();
-	}
+		interface Provider<T>{
+			T get();
+			}
 	
 
-public class Spellcheck_provider implements Provider<Spellchecker> {
+		public class Spellcheck_provider implements Provider<Spellchecker> {
 
 
-    public Spellchecker get() {
-        System.out.println("Privider separate class");
-        Spellchecker s = new Api_Spellchecker_impl();
-        return s;
-    }
-}
+		    public Spellchecker get() {
+			System.out.println("Privider separate class");
+			Spellchecker s = new Api_Spellchecker_impl();
+			return s;
+		    }
+		 }
 
 
