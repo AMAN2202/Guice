@@ -87,6 +87,7 @@ Injection a cosntant instance
 	bind(Integer.class).toInstance(10);
 
 But some places String might require diffrent values. for that we use @Named annotations or even can create our own annotations
+
 Using @Named
 
 	
@@ -137,8 +138,8 @@ binding it:-
 		 bind(A.class).annotatedWith(DatabaseUrl.class).to("string you want");
 	
 
-But suppose we are using any extenal module/jar we cannot place injeection :).
-But we can use Provide to overcome above problem.
+But suppose we are using any extenal module/jar we cannot place @Inject annotation :).
+But we can use Provide to overcome above problem by proving which class to inject during runtime.
 	suppose external jar conatins A
 	
 	
@@ -177,7 +178,22 @@ We can use provide in Module class and simply inject as we were doing earlier.
 
 			}
 
+We can create a seperate class for proving dependecy using Provider. But it needs to implement interface
 
+
+interface Provider<T>{
+	T get();
+	}
 	
+
+public class Spellcheck_provider implements Provider<Spellchecker> {
+
+
+    public Spellchecker get() {
+        System.out.println("Privider separate class");
+        Spellchecker s = new Api_Spellchecker_impl();
+        return s;
+    }
+}
 
 
