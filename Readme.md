@@ -142,16 +142,23 @@ binding it:-
 		 bind(A.class).annotatedWith(DatabaseUrl.class).to("string you want");
 	
 
-But suppose we are using any extenal module/jar we cannot place @Inject annotation :).
-But we can use Provide to overcome above problem by proving which class to inject during runtime.
-	suppose external jar conatins A
+But suppose we are using any extenal module/jar and we need to provide certain parameters to create that object
+then we can use Provide to overcome above problem 
+	suppose external jar conatins square
 	
 	
 
 	Class A{
-				
-				private Listr<Integer> a;
-			}
+				@Inject
+				private Square;
+		}
+	Class square{
+		private int edge;
+		private int color;
+		//geter and setter
+	}
+	
+		
 
 We can use provide in Module class and simply inject as we were doing earlier.
 				public class Module extends AbstractModule {
@@ -168,16 +175,9 @@ We can use provide in Module class and simply inject as we were doing earlier.
 
 			        @Singleton   //  we can use other annotations as well
 				    @Provides
-				    public  List<Integer> ProvideListInt(int a)
+				    public  Squarw ProvideListInt(int edge,String color)
 				    {
-				    	if(cond1)
-				    	{
-				    		return new ArrayList<Integer>;
-				    	}
-				    	else
-
-				    		return new LinkedList<Integer>;
-
+				    	return new Square(edge,color);
 				    }
 
 			}
