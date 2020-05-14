@@ -11,9 +11,11 @@ For using dependency injection we need to configure module . Our module must be 
 			}
 
 For injectting create injector supllying it configurations.
-		        Injector injector = Guice.createInjector(new Module(),new OtherModule());
-	Now we can use this injector for injection dependency.
-	for that we have to first place @inject annotation in any of the following ways.
+		       
+		       
+		       Injector injector = Guice.createInjector(new Module(),new OtherModule());
+Now we can use this injector for injection dependency.
+for that we have to first place @inject annotation in any of the following ways.
 
 	1)constructor injection
 
